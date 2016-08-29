@@ -2,7 +2,6 @@ package sorter.tests;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
@@ -21,17 +20,17 @@ import sort.utils.SortUtils;
 
 public class SorterTestsExecutor {
 
-	public static int MIN_ITERARIONS = 10;
-	public static int RESULT_PRECISION = 5;
-	public static int MAX_ARRAY_SIZE = 100;
-	public static boolean RUN_WORST_CASE_TESTS = true;
-	public static boolean PRINT_EACH_ITERATION_ARRAY = false;
-	public static boolean PRINT_EACH_ITERATION_TIME = false;
-	public static boolean SORT_ORDER = true;
-	public static boolean ALLOW_DUPLICATES = false;
-	public static boolean PRINT_TEST_SUMMARY_LINE = false;
-	public static int WARM_UP_ITERATIONS = 10;
-	public static boolean PRINT_WARMUP_STATUS_LINES = false;
+	public static int MIN_ITERARIONS = Integer.parseInt(System.getProperty("MIN_ITERARIONS","10"));
+	public static int RESULT_PRECISION = Integer.parseInt(System.getProperty("RESULT_PRECISION","5"));
+	public static int MAX_ARRAY_SIZE = Integer.parseInt(System.getProperty("MAX_ARRAY_SIZE","100"));
+	public static boolean RUN_WORST_CASE_TESTS = Boolean.parseBoolean(System.getProperty("RUN_WORST_CASE_TESTS", "true"));
+	public static boolean PRINT_EACH_ITERATION_ARRAY = Boolean.parseBoolean(System.getProperty("PRINT_EACH_ITERATION_ARRAY", "false"));
+	public static boolean PRINT_EACH_ITERATION_TIME = Boolean.parseBoolean(System.getProperty("PRINT_EACH_ITERATION_TIME", "false"));
+	public static boolean SORT_ORDER = Boolean.parseBoolean(System.getProperty("SORT_ORDER", "true"));
+	public static boolean ALLOW_DUPLICATES = Boolean.parseBoolean(System.getProperty("ALLOW_DUPLICATES", "false"));
+	public static boolean PRINT_TEST_SUMMARY_LINE = Boolean.parseBoolean(System.getProperty("PRINT_TEST_SUMMARY_LINE", "false"));
+	public static int WARM_UP_ITERATIONS = Integer.parseInt(System.getProperty("WARM_UP_ITERATIONS","10"));
+	public static boolean PRINT_WARMUP_STATUS_LINES = Boolean.parseBoolean(System.getProperty("PRINT_WARMUP_STATUS_LINES", "false"));
 
 	private static final LinkedList<Class<? extends Sorter>> sorterClasses = new LinkedList<Class<? extends Sorter>>() {
 		private static final long serialVersionUID = 9001363330167957480L;
